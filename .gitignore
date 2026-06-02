@@ -1,0 +1,33 @@
+# Runtime outputs
+logs/
+output/
+session-log.md
+*.log
+*.tmp
+*.out
+
+# Python cache/test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Secrets and credentials
+*.key
+*.pem
+auth.json
+credentials.json
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

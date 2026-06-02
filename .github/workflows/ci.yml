@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Unit tests and syntax checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Shell syntax check
+        run: bash -n security_check.sh
+
+      - name: Python syntax check
+        run: python -m py_compile tools/render_dashboard.py tools/render_history.py tests/test_render_dashboard.py tests/test_render_history.py
+
+      - name: Run tests
+        run: PYTHONPATH=. python -m unittest discover -s tests -v
+
+      - name: Renderer smoke test
+        run: |
+          mkdir -p logs output
+          cat > logs/latest.log <<'EOF'
+          ==== Host ====
+          [OK] WSL detected
+          ==== Summary ====
+          warnings=0
+          failures=0
+          status=OK
+          EOF
+          python tools/render_dashboard.py --input logs/latest.log --output output/dashboard.html --json-output output/summary.json --markdown-output output/report.md
+          python tools/render_dashboard.py --input logs/latest.log --append-history output/history.jsonl --no-html
+          python tools/render_history.py --input output/history.jsonl --markdown-output output/history.md --html-output output/history.html
+          test -s output/dashboard.html
+          test -s output/summary.json
+          test -s output/report.md
+          test -s output/history.jsonl
+          test -s output/history.md
+          test -s output/history.html
