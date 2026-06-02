@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">System Healthcheck dashboard preview</title>
+  <desc id="desc">Synthetic preview of the WSL Security Healthcheck dashboard showing OK status, zero warnings, zero failures, and sample check sections.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#172554"/>
+      <stop offset="0.45" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#17223d"/>
+      <stop offset="1" stop-color="#121a2f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="150" cy="80" r="260" fill="#2563eb" opacity="0.18"/>
+  <circle cx="1110" cy="680" r="320" fill="#14b8a6" opacity="0.12"/>
+
+  <rect x="64" y="52" width="1152" height="616" rx="28" fill="#0f172a" opacity="0.72" filter="url(#shadow)"/>
+  <rect x="88" y="76" width="1104" height="568" rx="22" fill="#0b1020" stroke="#263654" stroke-width="2"/>
+
+  <text x="122" y="136" fill="#e8eefc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="44" font-weight="800">WSL Security Healthcheck</text>
+  <text x="124" y="172" fill="#a8b3cf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">Static local dashboard generated from a redacted healthcheck log</text>
+
+  <g transform="translate(122 218)">
+    <rect width="160" height="96" rx="18" fill="url(#panel)" stroke="#263654"/>
+    <text x="20" y="34" fill="#a8b3cf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="2">STATUS</text>
+    <text x="20" y="72" fill="#2dd4bf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">OK</text>
+  </g>
+  <g transform="translate(302 218)">
+    <rect width="160" height="96" rx="18" fill="url(#panel)" stroke="#263654"/>
+    <text x="20" y="34" fill="#a8b3cf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="2">WARNINGS</text>
+    <text x="20" y="72" fill="#2dd4bf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">0</text>
+  </g>
+  <g transform="translate(482 218)">
+    <rect width="160" height="96" rx="18" fill="url(#panel)" stroke="#263654"/>
+    <text x="20" y="34" fill="#a8b3cf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="2">FAILURES</text>
+    <text x="20" y="72" fill="#2dd4bf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">0</text>
+  </g>
+  <g transform="translate(662 218)">
+    <rect width="160" height="96" rx="18" fill="url(#panel)" stroke="#263654"/>
+    <text x="20" y="34" fill="#a8b3cf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="2">OK CHECKS</text>
+    <text x="20" y="72" fill="#2dd4bf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">29</text>
+  </g>
+  <g transform="translate(842 218)">
+    <rect width="160" height="96" rx="18" fill="url(#panel)" stroke="#263654"/>
+    <text x="20" y="34" fill="#a8b3cf" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="2">SECTIONS</text>
+    <text x="20" y="72" fill="#bfdbfe" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800">10</text>
+  </g>
+
+  <g transform="translate(122 354)">
+    <rect width="500" height="212" rx="18" fill="#121a2f" stroke="#263654"/>
+    <rect width="500" height="52" rx="18" fill="#17223d"/>
+    <text x="22" y="34" fill="#e8eefc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Core checks</text>
+    <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">
+      <circle cx="30" cy="82" r="7" fill="#2dd4bf"/><text x="50" y="88" fill="#d7e1f8">No externally bound TCP listeners</text>
+      <circle cx="30" cy="122" r="7" fill="#2dd4bf"/><text x="50" y="128" fill="#d7e1f8">Sensitive file permissions match baseline</text>
+      <circle cx="30" cy="162" r="7" fill="#2dd4bf"/><text x="50" y="168" fill="#d7e1f8">Docker/SearXNG hardened and localhost-only</text>
+    </g>
+  </g>
+
+  <g transform="translate(658 354)">
+    <rect width="500" height="212" rx="18" fill="#121a2f" stroke="#263654"/>
+    <rect width="500" height="52" rx="18" fill="#17223d"/>
+    <text x="22" y="34" fill="#e8eefc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Generated artifacts</text>
+    <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">
+      <circle cx="30" cy="82" r="7" fill="#60a5fa"/><text x="50" y="88" fill="#d7e1f8">HTML dashboard</text>
+      <circle cx="30" cy="122" r="7" fill="#60a5fa"/><text x="50" y="128" fill="#d7e1f8">JSON summary and Markdown report</text>
+      <circle cx="30" cy="162" r="7" fill="#60a5fa"/><text x="50" y="168" fill="#d7e1f8">JSONL history and timeline views</text>
+    </g>
+  </g>
+
+  <text x="122" y="610" fill="#94a3b8" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">Synthetic public preview. Real logs/output are local-only and intentionally ignored by git.</text>
+</svg>

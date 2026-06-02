@@ -33,10 +33,18 @@ This project is intentionally dependency-light: the shell healthcheck uses commo
   - append-only JSONL history
   - Markdown/HTML history timeline
 
+## Demo preview
+
+![Synthetic System Healthcheck dashboard preview](assets/dashboard-preview.svg)
+
+The preview above is synthetic and safe for public display. Real `logs/` and `output/` artifacts are generated locally and intentionally ignored by git because they can include hostnames, usernames, paths, service names, and package details.
+
 ## Project structure
 
 ```text
 .
+├── assets/
+│   └── dashboard-preview.svg    # Synthetic public dashboard preview
 ├── security_check.sh            # Main non-destructive healthcheck
 ├── tools/
 │   ├── render_dashboard.py      # HTML/JSON/Markdown renderer for latest log
